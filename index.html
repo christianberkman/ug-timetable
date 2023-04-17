@@ -1,0 +1,68 @@
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/isBetween.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/isSameOrBefore.js"></script>
+<script src="olunaku.js"></script>
+
+<script>
+    const dates = {
+        'terms': [
+            {
+                name: 'Term 1',
+                start: '2023-02-06',
+                end: '2023-05-05'
+            },
+            {
+                name: 'Term 2',
+                start: '2023-05-29',
+                end: '2023-08-25'
+            },
+            {
+                name: 'Term 3',
+                start: '2023-09-18',
+                end: '2023-12-01'
+            }
+        ],
+        'holidays': [
+            {
+                name: 'Term 1 Holidays',
+                start: '2023-05-06',
+                end: '2023-05-28'
+            },
+            {
+                name: 'Term 2 Holidays',
+                start: '2023-08-26',
+                end: '2023-09-19'
+            },
+            {
+                name: 'Term 3 Holidays',
+                start: '2023-12-02',
+                end: '2024-02-03'
+            }
+        ]
+    }
+    
+    const o = new olunaku(dates)
+
+
+   /*
+    o.terms.forEach(term => {
+        console.log(term.name)
+        console.log('\t' + term.lengthInDays() +'d ' + term.lengthInWeeks() + 'w')
+        console.log('\t School Days: ' + term.lengthInSchoolDays() )
+        console.log('\t School Days Remaining: ' + term.schoolDaysRemaining() )
+        console.log('\t Current: ' + term.isCurrent() )
+    })
+    */
+
+    c = o.currentPeriod();
+    console.log(c.name)
+    console.log(c.lengthInSchoolDays() + ' school days')
+    console.log(c.currentDay() + '/' + c.lengthInDays() + 'd')
+    console.log(c.daysRemaining() + ' days remaining')
+    console.log(c.schoolDaysRemaining() + ' school days remaining')
+    console.log(c.currentWeek() + '/' + c.lengthInWeeks() + 'w')
+    console.log(c.weeksRemaining() + ' weeks remaining')
+
+
+
+</script>
