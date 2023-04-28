@@ -164,7 +164,9 @@ function isWeekDay(date){
          * Weeks
          */
         weeks(){
-            return Math.ceil( this.end.diff(this.start, 'w', true) )
+            const rounded = Math.round( this.end.diff(this.start, 'w', true) )
+            if(rounded == 0) return 1;
+            else return rounded;
         }
 
         currentWeek(){

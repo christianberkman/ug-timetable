@@ -43,6 +43,14 @@
         "details": "End date is in the year 2024."
     },
     {
+        "type": "period",
+        "name": "PLE",
+        "icon": "bi-file-earmark-check",
+        "start": "2023-10-02",
+        "end": "2023-10-04",
+        "details": "Estimated date"
+    },
+    {
         "type": "event",
         "name": "Labour Day",
         "icon": "bi-calendar4-event",
