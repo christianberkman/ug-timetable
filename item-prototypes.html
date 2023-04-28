@@ -1,0 +1,142 @@
+<!--
+  UG Timetable
+  Item prototypes
+  by Christian Berkman 2023
+-->
+<!--active-period-->
+<div class="ugt-item ugt-active-period col-12 col-lg-6 col-xl-4 mb-3">
+  <div class="card p-2 border border-danger bg-danger bg-opacity-10 mb-2">
+    <div class="position-relative">
+      <div class="mt-2 mb-1 d-flex justify-content-between align-items-start mb-1">
+        <h6 class="w-100">
+          <i class="ugt-icon bi"></i>
+          <span class="ugt-name">name</span>
+        </h6>
+        
+        <span class="ugt-ends-in badge bg-white text-black me-3"></span>
+        
+        <a class="link-details stretched-link text-white icon-link">
+          <i class="bi bi-chevron-down"></i>
+        </a>
+      </div>
+
+      <div class="progress bg-secondary mb-1">
+        <div class="ugt-progress progress-bar bg-danger bg-opacity-50"></div>
+      </div>
+      
+      <div class="d-flex justify-content-between align-items-start ms-2 me-2">
+        <span class="ugt-start">start</span>
+        <span class="fw-bold">
+          week <span class="ugt-current-week">##</span> of <span class="ugt-weeks">##</span>
+        </span>
+        <span class="ugt-end">end</span>
+      </div>  
+    </div><!--/pos-relative-->
+
+    <div class="collapse mt-3 ms-2">
+      <p>
+        Started <span class="ugt-since fw-bold">##</span><br />
+      </p>
+
+      <p>
+        <span class="ugt-weeks fw-bold">##</span> weeks (<span class="ugt-weeks-remaining">##</span> remaning)<br />
+        <span class="ugt-days fw-bold">##</span> days (<span class="ugt-days-remaining">##</span> remaning)<br />
+        <span class="ugt-weekdays fw-bold">##</span> weekdays (<span class="ugt-weekdays-remaining">##</span> remaning
+      </p>
+
+      <p class="ugt-details"></p>
+    </div>
+  </div><!--/card-->
+</div><!--/col-->
+<!--/active period-->
+
+<!--upcoming period-->
+<div class="ugt-item ugt-upcoming-period col-12 col-lg-6 col-xl-4 mb-3">
+  <div class="card p-2 mb-2 border border-danger">
+    <div class="position-relative">
+      <div class="mt-2 mb-1 d-flex justify-content-between align-items-start mb-1">
+        <h6 class="w-100">
+          <i class="ugt-icon bi"></i>
+          <span class="ugt-name">name</span>
+        </h6>
+        
+        <span class="ugt-starts-in badge bg-white text-black me-3"></span>
+        
+        <a class="link-details stretched-link text-white icon-link">
+          <i class="bi bi-chevron-down"></i>
+        </a>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-start ms-2 me-2">
+        <span class="ugt-start">start</span>
+        <span class="fw-bold">
+          <span class="ugt-weeks">##</span> weeks
+        </span>
+        <span class="ugt-end">end</span>
+      </div>
+    </div><!--/pos-relative-->
+    
+    <div class="collapse mt-3 ms-2">
+      <p>
+        <span class="ugt-weeks fw-bold">##</span> weeks<br />
+        <span class="ugt-days fw-bold">##</span> days<br />
+        <span class="ugt-weekdays fw-bold">##</span> weekdays<br />
+      </p>
+
+      <p class="ugt-details"></p>
+    </div>
+  </div><!--/card-->
+</div><!--/col-->
+<!--/upcoming period-->
+
+<!--active-event-->
+<div class="ugt-item ugt-active-event col-12 col-lg-6 col-xl-4 mb-3">
+  <div class="card border border-warning bg-warning bg-opacity-10 p-2 mb-2">
+    <div class="position-relative">
+      <div class="mt-2 mb-1 d-flex justify-content-between align-items-start mb-1">
+        <h6 class="w-100">
+          <i class="ugt-icon bi"></i>
+          <span class="ugt-name">name</span>
+        </h6>
+        
+        <span class="ugt-starts-in badge bg-white text-black me-3">today</span>
+        
+        <a class="link-details stretched-link text-white icon-link">
+          <i class="bi bi-chevron-down"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="collapse mt-3 ms-2">
+      <p class="ugt-details"></p>
+    </div>
+  </div><!--/card-->
+</div><!--/col-->
+<!--/active-event-->
+
+  <!--upcoming-event-->
+  <div class="ugt-item ugt-upcoming-event col-12 col-lg-6 col-xl-4 mb-3">
+  <div class="card p-2 mb-2 border border-warning">
+    <div class="position-relative">
+      <div class="mt-2 mb-1 d-flex justify-content-between align-items-start">
+        <h6 class="w-100">
+          <i class="ugt-icon bi"></i>
+          <span class="ugt-name">name</span>
+        </h6>
+        
+        <span class="ugt-starts-in badge bg-white text-black me-3">today</span>
+        
+        <a class="link-details stretched-link text-white icon-link">
+          <i class="bi bi-chevron-down"></i>
+        </a>
+      </div>
+
+      <p class="ugt-start ms-2 mb-0"></p>
+    </div>
+
+    <div class="collapse mt-3 ms-2">
+      <p class="ugt-details"></p>
+    </div>
+  </div><!--/card-->
+</div><!--/col-->
+<!--/upcoming-event-->
