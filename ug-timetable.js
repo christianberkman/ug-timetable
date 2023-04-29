@@ -11,7 +11,7 @@ dayjs.extend(dayjs.extend(window.dayjs_plugin_isBetween))
 dayjs.extend(dayjs.extend(window.dayjs_plugin_isSameOrBefore))
 dayjs.extend(dayjs.extend(window.dayjs_plugin_isSameOrAfter))
 dayjs.extend(dayjs.extend(window.dayjs_plugin_relativeTime))
-const today = dayjs( dayjs().format('YYYY-MM-DD') )
+const today = dayjs( dayjs('2023-04-29').format('YYYY-MM-DD') )
 console.log( 'Today is ' + today.format() )
 const tomorrow = today.add(1, 'd')
 const yesterday = today.subtract(1, 'd')
@@ -64,7 +64,6 @@ function isWeekDay(date){
             this.isActive = this._isActive()
             this.hasStarted = this._hasStarted()
             this.hasEnded = this._hasEnded()
-            console.log(this.progress())
         }
 
 
@@ -86,6 +85,11 @@ function isWeekDay(date){
             if(this.end.isSame(today)) return Math.round( ( (this.currentDay()-1) / this.days()  * 100 ))
             
             return Math.round( (this.currentDay() / this.days()) * 100 )
+        }
+
+        progressString(){
+            if(this.days() < 14) return 'day ' + this.currentDay() + ' of ' + this.days()
+            else return 'week ' + this.currentWeek() + ' of ' + this.weeks()
         }
 
         /**
@@ -156,8 +160,13 @@ function isWeekDay(date){
             if(today.isAfter(this.end)) return 0;
 
             // Period is active
-            const remaining = this.end.diff(today, 'd') + 1
-            if(remaining == 1 && this.end.isSame(today)) return 'today'
+            return this.end.diff(today, 'd') + 1
+        }
+
+        daysRemainingString(){
+            const remaining = this.daysRemaining()
+            if(remaining ==2) return 'tomorrow'
+            if(remaining == 1) return 'today'
             else return remaining
         }
 
@@ -189,7 +198,15 @@ function isWeekDay(date){
             if(today.isAfter(this.end)) return 0;
 
             // Period is active
-            return Math.ceil( this.end.add(1, 'd').diff(today, 'w', true) )
+            //return Math.round( this.end.add(1, 'd').diff(today, 'w', true) )
+            return this.weeks() - this.currentWeek()+1
+        }
+
+        weeksRemainingString(){
+            const weeks = this.weeksRemaining()
+            if(weeks == 2) return 'next week'
+            if(weeks == 1) return 'this week'
+            return weeks
         }
 
 
@@ -222,8 +239,7 @@ function isWeekDay(date){
                 checkDate = checkDate.add(1, 'd')
             }
 
-            if(length == 1 && today.isSame(this.end)) return 'today';
-            else return length
+            return length
         }
     }
 
@@ -307,14 +323,14 @@ const noDetails = '<em>No details.</em>'
 
             newDiv.find('.ugt-progress').attr('style', "width: " + item.progress() + "%")
             newDiv.find('.ugt-start').text(item.start.format('MMM D'))
-                newDiv.find('.ugt-current-week').text(item.currentWeek())
-                newDiv.find('.ugt-weeks').text(item.weeks())
+                newDiv.find('.ugt-progress-string').text(item.progressString())
             newDiv.find('.ugt-end').text(item.end.format('MMM D'))
 
+            newDiv.find('.ugt-weeks').text(item.weeks())
             newDiv.find('.ugt-since').text(item.startedSinceString())
-            newDiv.find('.ugt-weeks-remaining').text(item.weeksRemaining())
+            newDiv.find('.ugt-weeks-remaining').text(item.weeksRemainingString())
             newDiv.find('.ugt-days').text(item.days())
-            newDiv.find('.ugt-days-remaining').text(item.daysRemaining())
+            newDiv.find('.ugt-days-remaining').text(item.daysRemainingString())
             newDiv.find('.ugt-weekdays').text(item.weekDays())
             newDiv.find('.ugt-weekdays-remaining').text(item.weekDaysRemaining())  
 

@@ -92,5 +92,11 @@
         "name": "Boxing Day",
         "icon": "bi-tree",
         "start": "2023-12-26"
+    },
+    {
+        "type": "period",
+        "name": "fake ple",
+        "start": "2023-04-28",
+        "end": "2023-04-30"
     }
 ]
