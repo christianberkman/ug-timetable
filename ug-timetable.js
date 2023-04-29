@@ -92,6 +92,11 @@ function isWeekDay(date){
             else return 'week ' + this.currentWeek() + ' of ' + this.weeks()
         }
 
+        lengthString(){
+            if(this.days() < 14) return this.days() + ' days'
+            else return this.weeks() + ' weeks'
+        }
+
         /**
          * Days
          */
@@ -174,9 +179,13 @@ function isWeekDay(date){
          * Weeks
          */
         weeks(){
-            const rounded = Math.round( this.end.diff(this.start, 'w', true) )
-            if(rounded == 0) return 1;
-            else return rounded;
+            return Math.round( this.end.diff(this.start, 'w', true) )
+        }
+
+        weeksString(){
+            const weeks = this.weeks()
+            if(weeks == 0) return 'less than 1'
+            else return weeks
         }
 
         currentWeek(){
@@ -350,9 +359,10 @@ const noDetails = '<em>No details.</em>'
             newDiv.find('.ugt-starts-in').text( item.startsInString() )
             
             newDiv.find('.ugt-start').text(item.start.format('MMM D'))
-            newDiv.find('.ugt-weeks').text(item.weeks())
+                newDiv.find('.ugt-length-string').text(item.lengthString())
             newDiv.find('.ugt-end').text(item.end.format('MMM D'))
 
+            newDiv.find('.ugt-weeks').text(item.weeksString())
             newDiv.find('.ugt-days').text(item.days())
             newDiv.find('.ugt-weekdays').text(item.weekDays())
 
