@@ -12,12 +12,17 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
  //
  // UG-Timetable
  //
-    import * as ugt from './ug-timetable.js';
+    import * as ugt_items from './ugt-items.js';
+    import * as ugt_render from './ugt-render.js';
+    const ugt = { 
+        items: ugt_items,
+        render: ugt_render 
+    }
 
     // Load and Render data
     $.getJSON("data.json", data => {
-        ugt.load(data)
-        ugt.render()
+        ugt.items.load(data)
+        ugt.render.render(ugt.items.get())
     })
 
     // Hide
