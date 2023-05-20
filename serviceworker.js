@@ -4,13 +4,13 @@
 
 // Resources
 const resources = [
-    "/",
-    "/data.json",
-    "/index.html",
-    "/index.js",
-    "/item-prototypes.html",
-    "/ugt-items.js",
-    "/ugt-render.js",
+    "/ug-timetable/",
+    "/ug-timetable/data.json",
+    "/ug-timetable/index.html",
+    "/ug-timetable/index.js",
+    "/ug-timetable/item-prototypes.html",
+    "/ug-timetable/ugt-items.js",
+    "/ug-timetable/ugt-render.js",
     "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css",
     "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css",
     "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js",
