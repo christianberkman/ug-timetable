@@ -57,7 +57,7 @@ const registerServiceWorker = async () => {
         const registration = await navigator.serviceWorker.register(
           "/ug-timetable/serviceworker.js?v=20230520", 
           {
-            scope: "/ug-timetable"
+            scope: "/ug-timetable/"
           }
         );
 
