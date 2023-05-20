@@ -16,7 +16,7 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
     import * as ugt_render from './ugt-render.js';
     const ugt = { 
         items: ugt_items,
-        render: ugt_render 
+        render: ugt_render
     }
 
     // Load and Render data
@@ -40,3 +40,25 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
         $(this).parents('.ugt-item').find('.collapse').toggle('fast', 'swing')
     })
 
+//
+// Service Worker
+//
+const registerServiceWorker = async () => {
+    if ("serviceWorker" in navigator) {
+      try {
+        const registration = await navigator.serviceWorker.register("/serviceworker.js", {
+          scope: "/",
+        });
+        if (registration.installing) {
+          console.log("Service worker installing");
+        } else if (registration.waiting) {
+          console.log("Service worker installed");
+        } else if (registration.active) {
+          console.log("Service worker active");
+        }
+      } catch (error) {
+        console.error(`Registration failed with ${error}`);
+      }
+    }
+  };
+  registerServiceWorker();
