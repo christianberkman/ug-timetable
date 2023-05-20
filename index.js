@@ -55,7 +55,7 @@ const registerServiceWorker = async () => {
     if ("serviceWorker" in navigator) {
       try {
         const registration = await navigator.serviceWorker.register(
-          "/serviceworker.js?v=20230520", 
+          "/serviceworker.js", 
           {
             scope: "/"
           }
