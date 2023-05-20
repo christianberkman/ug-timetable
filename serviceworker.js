@@ -50,6 +50,15 @@ const addResourcesToCache = async (resources) => {
   });
   
   // Message
-  addEventListener("message", (event) =>
-    {console.log(`Message received: ${event.data}`);}
-  );
+  addEventListener("message", (event) => {
+    console.log(`Message received: ${event.data}`);
+    
+    switch(event.data){
+        case 'update':
+            caches.delete('ugt');
+            addResourcesToCache(resources).then( () => {
+                event.source.postMessage("updated");  
+            })
+        break;
+    }
+  });

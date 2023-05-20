@@ -1,96 +1,101 @@
-[
-    {
-        "type": "period",
-        "name": "Term 1",
-        "icon": "bi-mortarboard",
-        "start": "2023-02-06",
-        "end": "2023-05-05"
+{
+    "settings": {
+        "version": "2023-05-20"
     },
-    {
-        "type": "period",
-        "name": "Term 2",
-        "icon": "bi-mortarboard",
-        "start": "2023-05-29",
-        "end": "2023-08-25"
-    },
-    {
-        "type": "period",
-        "name": "Term 3",
-        "icon": "bi-mortarboard",
-        "start": "2023-09-18",
-        "end": "2023-12-01"
-    },
-    {
-        "type": "period",
-        "name": "Term 1 Holidays",
-        "icon": "bi-star",
-        "start": "2023-05-06",
-        "end": "2023-05-28"
-    },
-    {
-        "type": "period",
-        "name": "Term 2 Holidays",
-        "icon": "bi-star",
-        "start": "2023-08-26",
-        "end": "2023-09-17"
-    },
-    {
-        "type": "period",
-        "name": "Term 3 Holidays",
-        "icon": "bi-star",
-        "start": "2023-12-02",
-        "end": "2024-02-03",
-        "details": "End date is in the year 2024."
-    },
-    {
-        "type": "period",
-        "name": "PLE",
-        "icon": "bi-file-earmark-check",
-        "start": "2023-10-02",
-        "end": "2023-10-04",
-        "details": "Estimated date"
-    },
-    {
-        "type": "event",
-        "name": "Labour Day",
-        "icon": "bi-calendar4-event",
-        "start": "2023-05-01"
-    },
-    {
-        "type": "event",
-        "name": "Martyr's Day",
-        "icon": "bi-calendar4-event",
-        "start": "2023-06-03"
-    },
-    {
-        "type": "event",
-        "name": "Heroes' Day",
-        "icon": "bi-calendar4-event",
-        "start": "2023-06-09"
-    },
-    {
-        "type": "event",
-        "name": "Eid Al-Adha",
-        "icon": "bi-moon",
-        "start": "2023-06-29",
-        "details": "Date may vary and could shift one day forward."
-    },
-    {
-        "type": "event",
-        "name": "Independence Day",
-        "icon": "bi-flag",
-        "start": "2023-10-09"
-    },
-    {
-        "type": "event",
-        "name": "Christmas Day",
-        "icon": "bi-tree",
-        "start": "2023-12-25"
-    },
-    {
-        "type": "event",
-        "name": "Boxing Day",
-        "icon": "bi-tree",
-        "start": "2023-12-26"
-    }
-]
+    "items": [
+        {
+            "type": "period",
+            "name": "Term 1",
+            "icon": "bi-mortarboard",
+            "start": "2023-02-06",
+            "end": "2023-05-05"
+        },
+        {
+            "type": "period",
+            "name": "Term 2",
+            "icon": "bi-mortarboard",
+            "start": "2023-05-29",
+            "end": "2023-08-25"
+        },
+        {
+            "type": "period",
+            "name": "Term 3",
+            "icon": "bi-mortarboard",
+            "start": "2023-09-18",
+            "end": "2023-12-01"
+        },
+        {
+            "type": "period",
+            "name": "Term 1 Holidays",
+            "icon": "bi-star",
+            "start": "2023-05-06",
+            "end": "2023-05-28"
+        },
+        {
+            "type": "period",
+            "name": "Term 2 Holidays",
+            "icon": "bi-star",
+            "start": "2023-08-26",
+            "end": "2023-09-17"
+        },
+        {
+            "type": "period",
+            "name": "Term 3 Holidays",
+            "icon": "bi-star",
+            "start": "2023-12-02",
+            "end": "2024-02-03",
+            "details": "End date is in the year 2024."
+        },
+        {
+            "type": "period",
+            "name": "PLE",
+            "icon": "bi-file-earmark-check",
+            "start": "2023-10-02",
+            "end": "2023-10-04",
+            "details": "Estimated date"
+        },
+        {
+            "type": "event",
+            "name": "Labour Day",
+            "icon": "bi-calendar4-event",
+            "start": "2023-05-01"
+        },
+        {
+            "type": "event",
+            "name": "Martyr's Day",
+            "icon": "bi-calendar4-event",
+            "start": "2023-06-03"
+        },
+        {
+            "type": "event",
+            "name": "Heroes' Day",
+            "icon": "bi-calendar4-event",
+            "start": "2023-06-09"
+        },
+        {
+            "type": "event",
+            "name": "Eid Al-Adha",
+            "icon": "bi-moon",
+            "start": "2023-06-29",
+            "details": "Date may vary and could shift one day forward."
+        },
+        {
+            "type": "event",
+            "name": "Independence Day",
+            "icon": "bi-flag",
+            "start": "2023-10-09"
+        },
+        {
+            "type": "event",
+            "name": "Christmas Day",
+            "icon": "bi-tree",
+            "start": "2023-12-25"
+        },
+        {
+            "type": "event",
+            "name": "Boxing Day",
+            "icon": "bi-tree",
+            "start": "2023-12-26"
+        }
+    ]
+}

@@ -6,6 +6,11 @@
 
 var prototypes = null
 const noDetails = '<em>No details.</em>'
+    
+    export function version(version){
+        $('#version').text(version)
+    }
+
     export function render(items){
         return new Promise( (resolve, reject) => {
             $.get('./item-prototypes.html', (data) => {

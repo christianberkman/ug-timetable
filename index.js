@@ -21,8 +21,16 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
 
     // Load and Render data
     $.getJSON("data.json", data => {
-        ugt.items.load(data)
+        console.log("data.js version " + data.settings.version)
+        ugt.items.load(data.items)
         ugt.render.render(ugt.items.get())
+        ugt.render.version(data.settings.version)
+    })
+
+    // Update
+    $('#update').click( () => {
+      console.log('Requesting SW to update')
+      registration.active.postMessage("update");
     })
 
     // Hide
@@ -46,9 +54,13 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
 const registerServiceWorker = async () => {
     if ("serviceWorker" in navigator) {
       try {
-        const registration = await navigator.serviceWorker.register("/serviceworker.js", {
-          scope: "/",
-        });
+        const registration = await navigator.serviceWorker.register(
+          "/serviceworker.js?v=20230520", 
+          {
+            scope: "/"
+          }
+        );
+
         if (registration.installing) {
           console.log("Service worker installing");
         } else if (registration.waiting) {
@@ -56,9 +68,19 @@ const registerServiceWorker = async () => {
         } else if (registration.active) {
           console.log("Service worker active");
         }
+
+        navigator.serviceWorker.addEventListener("message", (event) => {
+          switch(event.data){
+            case 'updated':
+              alert('Update received. Press OK to refresh')
+              location.reload()
+          }
+        });
+
+        return registration
       } catch (error) {
         console.error(`Registration failed with ${error}`);
       }
     }
   };
-  registerServiceWorker();
+ const registration = await registerServiceWorker();
