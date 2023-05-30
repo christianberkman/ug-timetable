@@ -56,9 +56,9 @@ const addResourcesToCache = async (resources) => {
     switch(event.data){
         case 'update':
             caches.delete('ugt').then( () => {
-                addResourcesToCache(resources).then( () => {
+                /*addResourcesToCache(resources).then( () => {
                     event.source.postMessage("updated");  
-                })
+                })*/
             })    
         break;
     }
